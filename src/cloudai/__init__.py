@@ -39,9 +39,11 @@ from .installer.installer import Installer
 from .installer.slurm_installer import SlurmInstaller
 from .installer.standalone_installer import StandaloneInstaller
 from .parser.system_parser.slurm_system_parser import SlurmSystemParser
+from .parser.system_parser.volcano_system_parser import VolcanoSystemParser
 from .parser.system_parser.standalone_system_parser import StandaloneSystemParser
 from .report_generator import ReportGenerator
 from .runner.slurm.slurm_runner import SlurmRunner
+from .runner.volcano.volcano_runner import VolcanoRunner
 from .runner.standalone.standalone_runner import StandaloneRunner
 from .schema.test_template.chakra_replay.grading_strategy import ChakraReplayGradingStrategy
 from .schema.test_template.chakra_replay.report_generation_strategy import ChakraReplayReportGenerationStrategy
@@ -84,11 +86,14 @@ from .schema.test_template.ucc_test.slurm_install_strategy import UCCTestSlurmIn
 from .schema.test_template.ucc_test.template import UCCTest
 from .systems.slurm.slurm_system import SlurmSystem
 from .systems.standalone_system import StandaloneSystem
+from .systems.volcano.volcano_system import VolcanoSystem
 
 Registry().add_system_parser("standalone", StandaloneSystemParser)
 Registry().add_system_parser("slurm", SlurmSystemParser)
+Registry().add_system_parser("volcano", VolcanoSystemParser)
 
 Registry().add_runner("slurm", SlurmRunner)
+Registry().add_runner("volcano", VolcanoRunner)
 Registry().add_runner("standalone", StandaloneRunner)
 
 Registry().add_strategy(InstallStrategy, [SlurmSystem], [NcclTest], NcclTestSlurmInstallStrategy)

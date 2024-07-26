@@ -14,10 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from .volcano.volcano_system import VolcanoSystem
 from .slurm.slurm_system import SlurmSystem
 from .standalone_system import StandaloneSystem
 
 __all__ = [
     "SlurmSystem",
+    "VolcanoSystem",
     "StandaloneSystem",
 ]
